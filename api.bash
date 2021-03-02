@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 curl -s "https://monitoringapi.solaredge.com/site/1853858/energy?timeUnit=DAY&endDate=`date --date=yesterday +%Y-%m-%d`&startDate=2020-10-01&api_key=JE4E4104VSINFXNS6PU8HMS84P380DBC" | python3 -m json.tool
 curl -s "https://monitoringapi.solaredge.com/site/1853858/energy?timeUnit=DAY&endDate=`date --date=yesterday +%Y-%m-%d`&startDate=2020-10-01&api_key=JE4E4104VSINFXNS6PU8HMS84P380DBC" | python3 -m json.tool | jq '.energy.values'
 curl -s "https://monitoringapi.solaredge.com/site/1853858/energy?timeUnit=DAY&endDate=`date --date=yesterday +%Y-%m-%d`&startDate=2020-10-01&api_key=JE4E4104VSINFXNS6PU8HMS84P380DBC" | python3 -m json.tool | jq '.energy.values[]'
